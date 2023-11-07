@@ -45,6 +45,9 @@ export default function Dashboard() {
             <div key={classroom.id} id='dashboard-class-card'>
               <div id='card-left-content-container'>
                 <h1 id='card-title'>{classroom.name}</h1>
+                <p id='card-unit'><strong>Unit:</strong> Earth</p> {/* Add unit display */}
+                <p id='active-lesson-module'><strong>Lesson Standard:</strong> Fossil Fuels</p> {/* Add lesson standard display */}
+                {/* <p id='lesson-module-expectations'>{`Expectations: ${activeLessonModule.expectations}`}</p> */}
                 <div id='card-button-container' className='flex flex-row'>
                   <button onClick={() => handleViewClassroom(classroom.id)}>
                     View
