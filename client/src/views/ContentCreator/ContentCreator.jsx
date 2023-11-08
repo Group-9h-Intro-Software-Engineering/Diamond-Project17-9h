@@ -17,6 +17,8 @@ import { useSearchParams } from 'react-router-dom';
 
 import './ContentCreator.less';
 
+import { useNavigate } from 'react-router-dom';
+
 const { TabPane } = Tabs;
 
 export default function ContentCreator() {
@@ -31,6 +33,8 @@ export default function ContentCreator() {
     searchParams.has('page') ? parseInt(searchParams.get('page')) : 1
   );
   const [viewing, setViewing] = useState(parseInt(searchParams.get('activity')));
+
+  const navigate = useNavigate();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -202,6 +206,10 @@ export default function ContentCreator() {
             searchParams={searchParams}
             setSearchParams={setSearchParams}
           />
+        </TabPane>
+
+        <TabPane tab='Classroom Dashboard' key='classroom-dashboard'>
+          <button className="styled-button" onClick={() => navigate('/dashboard')}>Navigate to Classrooms</button>
         </TabPane>
       </Tabs>
     </div>
