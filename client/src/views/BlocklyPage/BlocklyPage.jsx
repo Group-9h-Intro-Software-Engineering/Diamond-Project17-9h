@@ -86,7 +86,7 @@ export default function BlocklyPage({ isSandbox }) {
         </div>
         {/* Add your help text content here */}
         <p>
-          This is the activity editor. Once you have created your activities, you can edit and save the changes here. To save your changes to the activity, click Save to template.{/* Your help text goes here */}
+          This is the activity editor. Once you have created your activities, you can edit and save the changes here. To save your changes to the activity, click Save to template. Changes are also saved automatically.{/* Your help text goes here */}
         </p>
         {/* Embed an image */}
       </div>
