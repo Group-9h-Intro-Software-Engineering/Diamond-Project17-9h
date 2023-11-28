@@ -4,11 +4,11 @@ import config from './NavBarConfig.json';
 import Logo from '../../assets/casmm_logo.png';
 import { Link, useNavigate } from 'react-router-dom';
 import { Menu, Dropdown } from 'antd';
-import { DownOutlined } from '@ant-design/icons';
+import { DownOutlined, QuestionCircleOutlined } from '@ant-design/icons'; // Added QuestionCircleOutlined icon
 import { removeUserSession } from '../../Utils/AuthRequests';
 import { useGlobalState } from '../../Utils/userState';
 
-export default function NavBar() {
+export default function NavBar({ onHelpClick }) {
   const [value] = useGlobalState('currUser');
   let currentRoute = window.location.pathname;
   let navigate = useNavigate();
@@ -30,7 +30,7 @@ export default function NavBar() {
 
   const menu = (
     <Menu>
-      {shouldShowRoute('Home') ? (
+            {shouldShowRoute('Home') ? (
         <Menu.Item key='0' onClick={() => handleRouteChange(routes.Home)}>
           <i className='fa fa-home' />
           &nbsp; Home
@@ -99,6 +99,11 @@ export default function NavBar() {
           &nbsp; Sign Out
         </Menu.Item>
       ) : null}
+      {/* Help Menu Item */}
+      <Menu.Item key='9' onClick={onHelpClick}>
+        <QuestionCircleOutlined />
+        &nbsp; Help
+      </Menu.Item>
     </Menu>
   );
 
