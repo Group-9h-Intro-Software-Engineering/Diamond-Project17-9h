@@ -70,8 +70,8 @@ export default function Classroom({
           />
         </TabPane>
       </Tabs>
-      {/* Add the "Help" button outside the Tabs */}
-      <Button onClick={handleHelpClick}>Help</Button>
+      
+      
     </div>
   );
 }
