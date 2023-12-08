@@ -8,6 +8,7 @@ import {
 import MentorSubHeader from '../../../../components/MentorSubHeader/MentorSubHeader';
 import DisplayCodeModal from './DisplayCodeModal';
 import MentorActivityDetailModal from './MentorActivityDetailModal';
+//import ActivityEditor from '../../../../ContentCreator/ActivityEditor/Componenets/ActivityEditor';
 import LessonModuleModal from './LessonModuleSelect/LessonModuleModal';
 import { message, Tag } from 'antd';
 import { useNavigate } from 'react-router-dom';
@@ -19,6 +20,7 @@ export default function Home({ classroomId, viewing }) {
   const [activeLessonModule, setActiveLessonModule] = useState(null);
   const [activityDetailsVisible, setActivityDetailsVisible] = useState(false)
   const navigate = useNavigate();
+
 
   const SCIENCE = 1;
   const MAKING = 2;
@@ -50,9 +52,29 @@ export default function Home({ classroomId, viewing }) {
       } else {
         message.error(res.err);
       }
+      if (activityRes) {
+      const allActivities = activityRes.data;
+
+      
+      const assigned = allActivities.filter((activity) => activity.isAssigned);
+      const unassigned = allActivities.filter((activity) => !activity.isAssigned);
+
+      setActivities(allActivities); 
+      setAssignedActivities(assigned); 
+      setUnassignedActivities(unassigned); 
+    } else {
+      message.error(activityRes.err);
+    }
     };
     fetchData();
   }, [classroomId]);
+
+
+const assignedActivities = activities.filter((activity) => activity.isAssigned);
+  
+  
+const unassignedActivities = activities.filter((activity) => !activity.isAssigned);
+  
 
   const handleViewActivity = (activity, name) => {
     activity.lesson_module_name = name;
@@ -89,6 +111,7 @@ export default function Home({ classroomId, viewing }) {
 
   return (
     <div>
+
       <button id='home-back-btn' onClick={handleBack}>
         <i className='fa fa-arrow-left' aria-hidden='true' />
       </button>
@@ -121,9 +144,14 @@ export default function Home({ classroomId, viewing }) {
                   </a>
                 </p>
               ) : null}
-              {activities ? (
+              
+     <div id='lesson-title' style={{ fontSize: '2em' }}>
+  <h1 className='green-text'>Assigned Activities</h1>
+</div>
+
+ {activities ? (
                 <div id='card-btn-container' className='flex space-between'>
-                  {activities.map((activity) => (
+                  {assignedActivities.map((activity) => (
                     <div id="view-activity-card" key={activity.id}>
                       <div id='activity-title'>
                        Activity Level {activity.number}
@@ -150,6 +178,134 @@ export default function Home({ classroomId, viewing }) {
                               )
                             }
                           >
+
+
+                            Demo Template
+                          </button>
+                        )}
+                        <MentorActivityDetailModal
+                          learningStandard={activeLessonModule}
+                          selectActivity={activity}
+                          activityDetailsVisible={setActivityDetailsVisible}
+                          setActivityDetailsVisible={setActivityDetailsVisible}
+                          setActivities={setActivities}
+                          viewing={false}
+                          handleAssignUnassignActivity = {handleAssignUnassignActivity}
+                        />
+                      </div>
+                      <div id='view-activity-info'>
+                        <p>
+                          <strong>STANDARDS: </strong>
+                          {activity.StandardS}
+                        </p>
+                        <p>
+                          <strong>Description: </strong>
+                          {activity.description}
+                        </p>
+                        <p>
+                          <strong>Classroom Materials: </strong>
+                          {activity.learning_components
+                            .filter(
+                              (component) =>
+                                component.learning_component_type === SCIENCE
+                            )
+                            .map((element, index) => {
+                              return (
+                                <Tag
+                                  key={index}
+                                  color={color[(index + 1) % 11]}
+                                >
+                                  {element.type}
+                                </Tag>
+                              );
+                            })}
+                        </p>
+                        <p>
+                          <strong>Student Materials: </strong>
+                          {activity.learning_components
+                            .filter(
+                              (component) =>
+                                component.learning_component_type === MAKING
+                            )
+                            .map((element, index) => {
+                              return (
+                                <Tag
+                                  key={index}
+                                  color={color[(index + 4) % 11]}
+                                >
+                                  {element.type}
+                                </Tag>
+                              );
+                            })}
+                        </p>
+                        <p>
+                          <strong>Arduino Components: </strong>
+                          {activity.learning_components
+                            .filter(
+                              (component) =>
+                                component.learning_component_type ===
+                                COMPUTATION
+                            )
+                            .map((element, index) => {
+                              return (
+                                <Tag
+                                  key={index}
+                                  color={color[(index + 7) % 11]}
+                                >
+                                  {element.type}
+                                </Tag>
+                              );
+                            })}
+                        </p>
+                        {activity.link ? (
+                          <p>
+                            <strong>Link to Additional Information: </strong>
+                            <a href={activity.link} target='_blank' rel='noreferrer'>
+                              {activity.link}
+                            </a>
+                          </p>
+                        ) : null}
+                      </div>
+                    </div>
+                  ))}
+                </div>
+              ) : null}
+
+<div id='lesson-title' style={{ fontSize: '2em' }}>
+  <h1 className='red-text'>Unassigned Activities</h1>
+</div>
+
+              {activities ? (
+                <div id='card-btn-container' className='flex space-between'>
+                  {unassignedActivities.map((activity) => (
+                    <div id="view-activity-card" key={activity.id}>
+                      <div id='activity-title'>
+                       Activity Level {activity.number}
+                       </div>
+                      <div id='view-activity-heading' style={{display: "flex"}}>
+                        
+                        <button
+                          id='view-activity-button'
+                          style={{marginRight: "auto"}}
+                          onClick={() =>
+                            handleViewActivity(activity, activeLessonModule.name)
+                          }
+                        >
+                          Student Template
+                        </button>
+                        {activity.activity_template && (
+                          <button
+                            id='view-activity-button'
+                            style={{marginRight: "auto"}}
+                            onClick={() =>
+                              openActivityInWorkspace(
+                                activity,
+                                activeLessonModule.name
+                              )
+                            }
+                          >
+
+
                             Demo Template
                           </button>
                         )}

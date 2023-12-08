@@ -44,6 +44,23 @@ const makeRequest = async ({ method, path, data, auth = false, error }) => {
   return { data: res, err: err };
 };
 
+export const getAssignedActivities = async () =>
+makeRequest({
+    method: GET,
+    path: `${server}/assignedActivities`,
+    auth: true,
+    error: 'Activities could not be retrieved.',
+  });
+
+
+  export const getUnassignedActivities = async () =>
+makeRequest({
+    method: GET,
+    path: `${server}/unAssignedActivities`,
+    auth: true,
+    error: 'Activities could not be retrieved.',
+  });
+
 export const getActivities = async () =>
   makeRequest({
     method: GET,

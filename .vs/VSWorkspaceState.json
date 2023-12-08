@@ -1,0 +1,15 @@
+{
+  "ExpandedNodes": [
+    "",
+    "\\client",
+    "\\client\\src",
+    "\\client\\src\\Utils",
+    "\\client\\src\\views",
+    "\\client\\src\\views\\ContentCreator",
+    "\\client\\src\\views\\ContentCreator\\ActivityEditor",
+    "\\client\\src\\views\\Mentor",
+    "\\client\\src\\views\\Mentor\\Classroom",
+    "\\client\\src\\views\\Mentor\\Classroom\\Home"
+  ],
+  "PreviewInSolutionExplorer": false
+}

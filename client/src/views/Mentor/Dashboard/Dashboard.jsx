@@ -13,6 +13,8 @@ export default function Dashboard() {
   const [value] = useGlobalState('currUser');
   const navigate = useNavigate();
 
+  
+
   useEffect(() => {
     let classroomIds = [];
     getMentor().then((res) => {
@@ -29,16 +31,38 @@ export default function Dashboard() {
       }
     });
   }, []);
+  
+
+  const addLesson = () => {
+    navigate('/contentCreator');
+  };
 
   const handleViewClassroom = (classroomId) => {
     navigate(`/classroom/${classroomId}`);
   };
+
+ 
 
   return (
     <div className='container nav-padding'>
       <NavBar />
       <div id='main-header'>Welcome {value.name}</div>
       <MentorSubHeader title={'Your Classrooms'}></MentorSubHeader>
+
+      <div id='lesson-input'>
+  <input
+    type='text'
+    placeholder='Lesson Name'
+  />
+  <textarea
+    placeholder='Lesson Description'
+  />
+</div>
+
+      <div id='lesson-button'>
+      <button onClick={addLesson}>Add Lesson</button>
+    </div>
+
       <div id='classrooms-container'>
         <div id='dashboard-card-container'>
           {classrooms.map((classroom) => (

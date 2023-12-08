@@ -10,17 +10,17 @@ import ActivityDetailModal from "./components/ActivityDetailModal"
 import "./ActivityEditor.less"
 
 const ActivityEditor = ({ learningStandard, viewing, setViewing, page, tab }) => {
-  const [visible, setVisible] = useState(false)
-  const [activityDetailsVisible, setActivityDetailsVisible] = useState(false)
-  const [activities, setActivities] = useState([])
-  const [selectActivity, setSelectActivity] = useState("")
-  // eslint-disable-next-line
-  const [_, setSearchParams] = useSearchParams()
+  const [visible, setVisible] = useState(false);
+  const [activityDetailsVisible, setActivityDetailsVisible] = useState(false);
+  const [activities, setActivities] = useState([]);
+  const [selectActivity, setSelectActivity] = useState("");
+  const [isAssigned, setIsAssigned] = useState({}); // Track assignment status
+  const [_, setSearchParams] = useSearchParams();
 
-  const showActivityDetailsModal = async activityObj => {
-    setActivityDetailsVisible(true)
-    setSelectActivity(activityObj)
-  }
+  const showActivityDetailsModal = async (activityObj) => {
+    setActivityDetailsVisible(true);
+    setSelectActivity(activityObj);
+  };
 
   useEffect(() => {
     const getSavedActivity = async () => {
@@ -28,7 +28,14 @@ const ActivityEditor = ({ learningStandard, viewing, setViewing, page, tab }) =>
         const getActivityAll = await getLessonModuleActivities(viewing)
         const myActivities = getActivityAll.data
         myActivities.sort((a, b) => (a.number > b.number ? 1 : -1))
+
+        const initialAssignmentStatus = {};
+      myActivities.forEach((activity) => {
+        initialAssignmentStatus[activity.id] = false;
+      });
+
         setActivities([...myActivities])
+        setIsAssigned({ ...initialAssignmentStatus });
         setVisible(true)
       }
     }
@@ -69,6 +76,14 @@ const ActivityEditor = ({ learningStandard, viewing, setViewing, page, tab }) =>
     setSearchParams({ tab, page })
   }
 
+    const toggleAssignmentStatus = (activityId) => {
+    setIsAssigned((prevState) => ({
+      ...prevState,
+      [activityId]: !prevState[activityId],
+    }));
+  };
+
+
   return (
     <div>
       <Modal
@@ -88,8 +103,16 @@ const ActivityEditor = ({ learningStandard, viewing, setViewing, page, tab }) =>
                 grid={{ gutter: 16, column: 3 }}
                 style={{ marginTop: "2vh" }}
                 dataSource={activities}
-                renderItem={item => (
+                renderItem={(item) => (
                   <List.Item>
+
+                  <Button
+  className="assign-button" // Apply the new class here
+  onClick={() => toggleAssignmentStatus(item.id)}
+>
+  {isAssigned[item.id] ? "Unassign" : "Assign"}
+</Button>
+
                     <Card
                       id="card-activity"
                       key={item.id}
@@ -104,6 +127,12 @@ const ActivityEditor = ({ learningStandard, viewing, setViewing, page, tab }) =>
                     >
                       &times;
                     </span>
+                    <Button
+                      className="assign-button"
+                      onClick={() => toggleAssignmentStatus(item.id)}
+                    >
+                      {isAssigned[item.id] ? "Unassign" : "Assign"}
+                    </Button>
                   </List.Item>
                 )}
               />
@@ -157,7 +186,7 @@ const ActivityEditor = ({ learningStandard, viewing, setViewing, page, tab }) =>
         />
       )}
     </div>
-  )
-}
+  );
+};
 
-export default ActivityEditor
+export default ActivityEditor;

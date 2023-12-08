@@ -27,6 +27,7 @@ export default function Classroom({
   }, [id]);
 
   return (
+
     <div className='container nav-padding'>
       <NavBar isMentor={true} />
       <Tabs
@@ -40,6 +41,7 @@ export default function Classroom({
             setSelectedActivity={setSelectedActivity}
             viewing={viewing}
           />
+         
         </TabPane>
         <TabPane tab='Roster' key='roster'>
           <Roster handleLogout={handleLogout} classroomId={id} />
@@ -50,6 +52,7 @@ export default function Classroom({
             setSearchParams={setSearchParams}
             classroomId={id}
           />
+        
         </TabPane>
       </Tabs>
     </div>

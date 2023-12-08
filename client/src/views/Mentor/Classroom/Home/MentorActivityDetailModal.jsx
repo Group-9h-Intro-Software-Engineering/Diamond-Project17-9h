@@ -1,6 +1,7 @@
 import { Button, Form, Input, message, Modal } from "antd"
 import React, { useEffect, useState } from "react"
 import { useNavigate } from "react-router-dom"
+import './mentorActivityDetailModal.less';
 import {
   getActivity,
   getActivityToolbox,
@@ -35,6 +36,7 @@ const MentorActivityDetailModal = ({
   const [linkError, setLinkError] = useState(false)
   const [submitButton, setSubmitButton] = useState(0)
   const navigate = useNavigate()
+  const [isAssigned, setIsAssigned] = useState(false);   //true is actually false
 
   useEffect(() => {
     const showActivityDetailsModal = async () => {
@@ -148,6 +150,63 @@ const MentorActivityDetailModal = ({
     setVisible(true)
     //setOpen(true)
 };
+const handleAssignUnassignActivity = async (activityID) => {
+
+
+
+  if (isAssigned) {
+    setIsAssigned(false);
+    console.log('test');
+    activity.isAssigned = false;
+  } else if(!isAssigned){
+    setIsAssigned(true);
+    activity.isAssigned = true; 
+    return {...activity,isAssigned: !activity.isAssigned};
+  }
+  else{   // if it hasnt been assigned yet just immediately assign it 
+      setIsAssigned(false);
+      activity.isAssigned = false;
+  }
+  
+    
+  const assigned = updatedActivities.filter((activity) => activity.id);
+  const unassigned = updatedActivities.filter((activity) => !activities.isAssigned);
+
+  setActivities(updateActivities)
+  setAssignedActivities(assigned);
+  setUnassignedActivities(unassigned);
+  
+  
+  
+  /*consol.log("test");
+  const updatedActivity = { ...selectActivity, isAssigned: !isAssigned };
+  consol.log(updatedActivity);
+
+  if (updatedActivity.isAssigned) {
+    setAssignedActivities((prevAssignedActivities) => {
+      return { ...prevAssignedActivities, [updatedActivity.id]: updatedActivity };
+    });
+    // Remove the activity from the unassigned map
+    setUnassignedActivities((prevUnassignedActivities) => {
+      const { [updatedActivity.id]: removedActivity, ...rest } = prevUnassignedActivities;
+      return rest;
+    });
+  } else {
+    // Move the activity to the unassigned map
+    setUnassignedActivities((prevUnassignedActivities) => {
+      return { ...prevUnassignedActivities, [updatedActivity.id]: updatedActivity };
+    });
+    // Remove the activity from the assigned map
+    setAssignedActivities((prevAssignedActivities) => {
+      const { [updatedActivity.id]: removedActivity, ...rest } = prevAssignedActivities;
+      return rest;
+    });
+  }
+  */
+};
+
+
+
   return (
     <div id="mentoredit">
     <Button id="view-activity-button"
@@ -169,6 +228,8 @@ const MentorActivityDetailModal = ({
       footer={null}
       width="45vw"
     >
+   
+   
       <Form
         id="activity-detail-editor"
         layout="horizontal"
@@ -268,6 +329,18 @@ const MentorActivityDetailModal = ({
             span: 30,
           }}
         >
+
+
+         <div>
+    <button
+      id="assign-unassign-activity-btn"
+      onClick={handleAssignUnassignActivity}
+      className={isAssigned ? "assigned-button" : "unassigned-button"}
+    >
+      {isAssigned ? "Unassign" : "Assign"}
+    </button>
+  </div>
+
           <button id="save--set-activity-btn" onClick={() => setSubmitButton(1)}>
             Edit Student Template
           </button>
