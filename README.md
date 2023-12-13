@@ -9,6 +9,63 @@ Cloud-based programming interface
 
 <br/>
 
+# Project 17: Teacher View and Lesson Creation
+
+- The goal of this project is to allow for teacher interaction with their content and classrooms. The team's goal was to make the teacher's interaction with lessons and their classroom and seamless as possible. Part of this included merging some functionality from the Content Creator role. 
+
+## Team 9h Members
+- Kevin Pham (Project Manager)
+- Loc Dinh (Scrum Master)
+- Jack Ditzel
+- Gilon Kravatsky
+- Ryan Hulke
+- Michael Tumminia
+
+## Features Implemented
+-  Roster Search (Kevin): Search through a list of students in the roster to find a specific one
+![Screenshot 2023-12-13 161640](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/c9667577-11ce-4bcd-9e16-f3a0e681c319)
+-  Roster Grouping (Kevin): Group students into specific subsections from the roster
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/531042a7-8ad9-4938-a9b3-6ff8ad89b038)
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/18ced630-f1d8-4ea3-adb6-f9c494e8282c)
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/20d4d2ac-1ae9-4496-8ffa-3adfcfbcc925)
+
+-  Active Assignment (Loc): Display current active unit and lesson standard, stylized hover effects
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/48865674-1b36-4026-831e-021fcb6c4007)
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/cfd7246b-62da-4960-bd7d-5e21ef97af20)
+
+-  Lesson Saving (Gilon): Autosave workspace every 1 second, can still be manually saved as well
+-  Lesson Navigation (Gilon): Allows for lesson sharing between teachers, modified Strapi backend
+-  Tutorial/Help (Gilon): Display basic help button for teachers, dynamically sized help box
+-  Lesson Editor Page Table (Jack): Display sorted lessons from Content Creator by grade level inside of a stylized table
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/c11b3d3c-cd6e-4953-9487-3c7374a47c41)
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/c24713b7-158b-4654-9e04-0bd08c64c3af)
+
+-  Lesson from Homepage Access (Michael): Button for teachers to assign/unassign an activity as well as saving for future use
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/d8bcbebf-04cf-4d34-87af-274ff1de7692)
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/942d0804-8713-4ba6-98b3-26e3bd79d1cd)
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/d0106aa0-c118-4ca9-9544-9d79a95805a1)
+
+-  Create New Lesson (Ryan): Functional lesson creation with stylized button
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/1901c4ae-69da-43fb-b151-5ed1911d94bc)
+
+## Instructions to Run
+
+### Option 1: Update teacher permissions manually
+1. Lauch Docker app and run `docker compose up` in main project directory
+2. Open `localhost:1337/admin` in browser, and sign in with test credentials (username: superadmin@mail.com, password: TN9q6RZhDaw6)
+3. Navigate to Settings -> Roles -> Classroom Manager
+4. Update roles to match the following screenshots, then press "Save":
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/23919975-4b1b-4a50-aee0-310061cd9b12)
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/ada0dc9d-57dd-4676-ad42-764c9a93ce12)
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/e5b63d95-8a09-45d7-84cc-1955fd8f0a50)
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/52fadd8b-b6e6-4dcf-9f8a-31430e4a0208)
+5. Enter `client` directory and run `yarn start`
+6. Go to browser and enter `localhost:3000`
+7. Navigate to Menu -> User Login
+8. Username: MissFrizzle Password: easypassword
+
+
+
 ## Application
 
 ### `client` 

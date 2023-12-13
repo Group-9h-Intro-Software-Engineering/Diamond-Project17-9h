@@ -37,6 +37,7 @@ export default function MentorCanvas({ activity, isSandbox, setActivity,  isMent
   const [studentToolbox, setStudentToolbox] = useState([]);
   const [openedToolBoxCategories, setOpenedToolBoxCategories] = useState([]);
   const [forceUpdate] = useReducer((x) => x + 1, 0);
+  const [autoSaveInterval, setAutoSaveInterval] = useState(null);
   const workspaceRef = useRef(null);
   const activityRef = useRef(null);
   const navigate = useNavigate();
@@ -231,7 +232,7 @@ export default function MentorCanvas({ activity, isSandbox, setActivity,  isMent
       if (res.err) {
         message.error(res.err);
       } else {
-        message.success('Activity Template saved successfully');
+        //message.success('Activity Template saved successfully');
       }
     } else if (!isSandbox && isMentorActivity) {
       // Save activity template
@@ -239,7 +240,7 @@ export default function MentorCanvas({ activity, isSandbox, setActivity,  isMent
       if (res.err) {
         message.error(res.err);
       } else {
-        message.success('Activity template saved successfully');
+        //message.success('Activity template saved successfully');
       }
     } else {
       // if we already have the workspace in the db, just update it.
@@ -273,6 +274,20 @@ export default function MentorCanvas({ activity, isSandbox, setActivity,  isMent
       </Menu.Item>
     </Menu>
   );
+
+  useEffect(() => {
+    // Set up the auto-save interval
+    const intervalId = setInterval(() => {
+      handleCreatorSave();
+    }, 1000); // 1000 milliseconds = 1 seconds
+
+    setAutoSaveInterval(intervalId);
+
+    // Clean up the interval when the component unmounts or when activity changes
+    return () => {
+      clearInterval(intervalId);
+    };
+  }, [activity]);
 
   const menuSave = (
     <Menu>
