@@ -21,6 +21,9 @@ Cloud-based programming interface
 
 ## Features Implemented
 -  Roster Search (Kevin)
+![Screenshot 2023-12-13 161640](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/c9667577-11ce-4bcd-9e16-f3a0e681c319)
+
+
 -  Roster Grouping (Kevin)
 -  Active Assignment (Loc)
 -  Lesson Saving (Gilon)
