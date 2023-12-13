@@ -9,7 +9,26 @@ Cloud-based programming interface
 
 <br/>
 
+# Project 17: Teacher View and Lesson Creation
+
+## Team 9h Members
+- Kevin Pham (Project Manager)
+- Loc Dinh (Scrum Master)
+- Jack Ditzel
+- Gilon Kravatsky
+- Ryan Hulke
+- Michael Tumminia
+
 ## Features Implemented
+-  Roster Search (Kevin)
+-  Roster Grouping (Kevin)
+-  Active Assignment (Loc)
+-  Lesson Saving (Gilon)
+-  Lesson Navigation (Gilon)
+-  Tutorial/Help (Gilon)
+-  Lesson Editor Page Table (Jack)
+-  Lesson from Homepage Access (Michael)
+-  Create New Lesson (Ryan)
 
 ## Application
 
