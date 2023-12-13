@@ -48,6 +48,19 @@ Cloud-based programming interface
 
 ## Instructions to Run
 
+### Option 1: Update teacher permissions manually
+1. Lauch Docker app and run `docker compose up` in main project directory
+2. Open `localhost:1337/admin` in browser, and sign in with test credentials (username: superadmin@mail.com, password: TN9q6RZhDaw6)
+3. Navigate to Settings -> Roles -> Classroom Manager
+4. Update roles to match the following screenshots, then press "Save":
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/23919975-4b1b-4a50-aee0-310061cd9b12)
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/ada0dc9d-57dd-4676-ad42-764c9a93ce12)
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/e5b63d95-8a09-45d7-84cc-1955fd8f0a50)
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/52fadd8b-b6e6-4dcf-9f8a-31430e4a0208)
+
+
+
+### Update teacher permissions with code
 
 
 ## Application
