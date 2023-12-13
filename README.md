@@ -57,7 +57,10 @@ Cloud-based programming interface
 ![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/ada0dc9d-57dd-4676-ad42-764c9a93ce12)
 ![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/e5b63d95-8a09-45d7-84cc-1955fd8f0a50)
 ![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/52fadd8b-b6e6-4dcf-9f8a-31430e4a0208)
-
+5. Enter `client` directory and run `yarn start`
+6. Go to browser and enter `localhost:3000`
+7. Navigate to Menu -> User Login
+8. Username: MissFrizzle Password: easypassword
 
 
 
