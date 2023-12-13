@@ -60,8 +60,6 @@ Cloud-based programming interface
 
 
 
-### Update teacher permissions with code
-
 
 ## Application
 
