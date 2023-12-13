@@ -11,7 +11,7 @@ Cloud-based programming interface
 
 # Project 17: Teacher View and Lesson Creation
 
-The goal of this project is to allow for teacher interaction with their content and classrooms. The team's goal was to make the teacher's interaction with lessons and their classroom and seamless as possible. Part of this included merging some functionality from the Content Creator role. 
+- The goal of this project is to allow for teacher interaction with their content and classrooms. The team's goal was to make the teacher's interaction with lessons and their classroom and seamless as possible. Part of this included merging some functionality from the Content Creator role. 
 
 ## Team 9h Members
 - Kevin Pham (Project Manager)
