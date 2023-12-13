@@ -20,30 +20,35 @@ Cloud-based programming interface
 - Michael Tumminia
 
 ## Features Implemented
--  Roster Search (Kevin)
+-  Roster Search (Kevin): Search through a list of students in the roster to find a specific one
 ![Screenshot 2023-12-13 161640](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/c9667577-11ce-4bcd-9e16-f3a0e681c319)
--  Roster Grouping (Kevin)
+-  Roster Grouping (Kevin): Group students into specific subsections from the roster
 ![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/531042a7-8ad9-4938-a9b3-6ff8ad89b038)
 ![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/18ced630-f1d8-4ea3-adb6-f9c494e8282c)
 ![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/20d4d2ac-1ae9-4496-8ffa-3adfcfbcc925)
 
--  Active Assignment (Loc)
+-  Active Assignment (Loc): Display current active unit and lesson standard, stylized hover effects
 ![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/48865674-1b36-4026-831e-021fcb6c4007)
 ![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/cfd7246b-62da-4960-bd7d-5e21ef97af20)
 
--  Lesson Saving (Gilon)
--  Lesson Navigation (Gilon)
--  Tutorial/Help (Gilon)
--  Lesson Editor Page Table (Jack)
+-  Lesson Saving (Gilon): Autosave workspace every 1 second, can still be manually saved as well
+-  Lesson Navigation (Gilon): Allows for lesson sharing between teachers, modified Strapi backend
+-  Tutorial/Help (Gilon): Display basic help button for teachers, dynamically sized help box
+-  Lesson Editor Page Table (Jack): Display sorted lessons from Content Creator by grade level inside of a stylized table
 ![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/c11b3d3c-cd6e-4953-9487-3c7374a47c41)
 ![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/c24713b7-158b-4654-9e04-0bd08c64c3af)
 
--  Lesson from Homepage Access (Michael)
+-  Lesson from Homepage Access (Michael): Button for teachers to assign/unassign an activity as well as saving for future use
 ![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/d8bcbebf-04cf-4d34-87af-274ff1de7692)
 ![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/942d0804-8713-4ba6-98b3-26e3bd79d1cd)
 ![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/d0106aa0-c118-4ca9-9544-9d79a95805a1)
 
--  Create New Lesson (Ryan)
+-  Create New Lesson (Ryan): Functional lesson creation with stylized button
+![image](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/assets/93224729/1901c4ae-69da-43fb-b151-5ed1911d94bc)
+
+## Instructions to Run
+
+
 
 ## Application
 
