@@ -63,6 +63,7 @@ Cloud-based programming interface
 6. Go to browser and enter `localhost:3000`
 7. Navigate to Menu -> User Login
 8. Username: MissFrizzle Password: easypassword
+9. Furthermore, all changes are stored in the `development_db.dump` file stored [here](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/blob/develop/development_db.dump)
 
 
 
