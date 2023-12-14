@@ -67,6 +67,9 @@ Cloud-based programming interface
 
 ## Outstanding Work
 - Adding help button to more pages, making it more accessible
+- 
+## Video Demonstration
+- Videos of each part can be found [here](https://drive.google.com/drive/folders/1-A3UwLuTcuJsfnyJFLkGOZge0Qanw7GO?usp=sharing)
 
 ## Application
 
