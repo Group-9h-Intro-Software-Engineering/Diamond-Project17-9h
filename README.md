@@ -65,7 +65,8 @@ Cloud-based programming interface
 8. Username: MissFrizzle Password: easypassword
 9. Furthermore, all changes are stored in the `development_db.dump` file stored [here](https://github.com/Group-9h-Intro-Software-Engineering/Diamond-Project17-9h/blob/develop/development_db.dump)
 
-
+## Outstanding Work
+- Adding help button to more pages, making it more accessible
 
 ## Application
 
